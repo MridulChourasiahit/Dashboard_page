@@ -1,0 +1,105 @@
+// Variables
+$gray-200: #e5e7eb;
+$gray-500: #6b7280;
+$blue-800: #1e40af;
+$blue-400: #60a5fa;
+$white: #ffffff;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin transition-base {
+  transition: all 0.2s ease-in-out;
+}
+
+@mixin hover-effect {
+  &:hover {
+    background-color: $blue-800;
+    color: $white;
+    
+    .menu-icon {
+      color: $white;
+    }
+  }
+}
+
+.sidebar-card {
+  width: 100%;
+  height: 100%;
+  background-color: $white;
+  border-radius: 0.125rem;
+  border: 1px solid $gray-200;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+}
+
+.menu-item {
+  @include flex-center;
+  @include transition-base;
+  @include hover-effect;
+  
+  height: 4rem;
+  padding: 0 1rem;
+  color: $gray-500;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  cursor: pointer;
+  
+  .menu-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.75rem;
+  }
+  
+  .menu-text {
+    font-size: 0.875rem;
+    flex: 1;
+  }
+  
+  .menu-arrow {
+    width: 1rem;
+    height: 1rem;
+    transform: rotate(90deg);
+  }
+}
+
+.logout-container {
+  margin: 1.25rem;
+  
+  .logout-button {
+    @include flex-center;
+    @include transition-base;
+    
+    padding: 0.75rem 1rem;
+    justify-content: space-between;
+    background-color: $gray-200;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    color: $gray-500;
+    
+    &:hover {
+      background-color: $blue-400;
+      color: $white;
+    }
+    
+    .logout-text {
+      font-size: 0.875rem;
+      margin-right: 0.75rem;
+      margin-left: 0.75rem;
+    }
+    
+    .logout-icon {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+}

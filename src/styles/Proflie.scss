@@ -1,0 +1,26 @@
+// Profile.scss
+
+// Variables
+$border-color: #e5e7eb; // gray-200
+$border-radius: 0.125rem; // rounded-sm
+$padding: 0.75rem; // p-3
+
+// Profile component styles
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__container {
+    display: flex;
+    padding: $padding;
+    align-items: center;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+  }
+
+  &__image {
+    border-radius: 0.5rem; // rounded-lg
+    object-fit: cover;
+  }
+}

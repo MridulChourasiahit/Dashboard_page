@@ -1,0 +1,189 @@
+// Variables
+$primary-color: #1e40af; // blue-800
+$text-white: #ffffff;
+$border-radius: 8px;
+$spacing-unit: 4px;
+
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin button-base {
+  border-radius: $border-radius;
+  @include flex-center;
+}
+
+@mixin no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// Container styles
+.template-container {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: $border-radius;
+
+  &__inner {
+    padding: $spacing-unit * 1 $spacing-unit * 5;
+    margin: 0 auto;
+    border-radius: $border-radius;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Header styles
+.template-header {
+  @include flex-between;
+  padding: $spacing-unit * 4;
+  border-radius: $border-radius;
+
+  &__title {
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+
+  &__add-button {
+    @include button-base;
+    background-color: $primary-color;
+    color: $text-white;
+    padding: ($spacing-unit * 2) ($spacing-unit * 4);
+    font-weight: bold;
+  }
+}
+
+// Main content styles
+.template-content {
+  width: 100%;
+  height: 100%;
+  
+  &__container {
+    margin: 0 $spacing-unit * 4;
+    border: 1px solid #e5e7eb;
+    border-radius: $border-radius;
+    
+  }
+}
+
+// Table header section
+.table-header {
+  @include flex-between;
+  background-color: $primary-color;
+  padding: $spacing-unit * 3;
+  border-top-left-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+  color: $text-white;
+
+  &__title {
+    font-weight: bold;
+    font-size: 1.125rem;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    padding: 0 ($spacing-unit * 8);
+    
+    .filter-button {
+      margin-left: $spacing-unit * 12;
+    }
+
+    .search-container {
+      @include flex-center;
+      margin-left: $spacing-unit * 5;
+      margin-bottom: $spacing-unit;
+
+      form {
+        .search-input-group {
+          @include flex-center;
+          background-color: $primary-color;
+          border: 1px solid $text-white;
+          padding: $spacing-unit * 2;
+          border-radius: $border-radius;
+
+          input {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            color: $text-white;
+            
+            &::placeholder {
+              color: rgba($text-white, 0.7);
+            }
+          }
+        }
+      }
+    }
+
+    .save-search {
+      @include flex-center;
+      margin-left: $spacing-unit * 5;
+      
+      span {
+        margin-left: $spacing-unit;
+      }
+    }
+  }
+}
+
+// Table container
+.table-container {
+//   border: 1px solid #e5e7eb;
+//   border-radius: $spacing-unit;
+  margin: ($spacing-unit * 4) ($spacing-unit * 4);
+  height: 75%;
+
+  &__inner {
+    @include flex-center;
+    border: 1px solid #e5e7eb;
+    margin-top: $spacing-unit * 6;
+    border-radius: $border-radius;
+    margin-left: $spacing-unit * 6;
+    margin-right: $spacing-unit * 6;
+  }
+
+  &__content {
+    border-radius: $border-radius;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    width: 100%;
+
+    .table-scroll {
+      max-height: 24rem;
+      overflow-y: scroll;
+      @include no-scrollbar;
+    }
+  }
+}
+
+// DataTable custom styles
+.rdt_Table {
+  .action-cell {
+    @include flex-center;
+    gap: $spacing-unit * 2;
+
+    button {
+      @include button-base;
+
+      img {
+        height: 1.75rem;
+      }
+    }
+  }
+}
