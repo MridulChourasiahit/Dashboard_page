@@ -1,5 +1,9 @@
 const ChartPage = () => {
-  return <div>ChartPage</div>;
+  return (
+    <div>
+      
+    </div>
+  )
 };
 
 export default ChartPage;

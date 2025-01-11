@@ -1,6 +1,6 @@
 // Variables
 $gray-200: #e5e7eb;
-$gray-500: #6b7280;
+$gray-100: #6b7280;
 $blue-800: #1e40af;
 $blue-400: #60a5fa;
 $white: #ffffff;
@@ -48,7 +48,7 @@ $white: #ffffff;
   
   height: 4rem;
   padding: 0 1rem;
-  color: $gray-500;
+  color: $gray-100;
   font-weight: 500;
   border-radius: 0.5rem;
   text-decoration: none;
@@ -84,7 +84,7 @@ $white: #ffffff;
     background-color: $gray-200;
     border-radius: 0.5rem;
     text-decoration: none;
-    color: $gray-500;
+    color: $gray-100;
     
     &:hover {
       background-color: $blue-400;

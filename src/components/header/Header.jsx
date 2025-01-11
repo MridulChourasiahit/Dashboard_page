@@ -129,6 +129,9 @@ const Header = memo(
             <div className="header__frame">
               <img src={Frame} type="icon" />
             </div>
+            <div className="header__frame">
+              <img src={Frame} type="icon" />
+            </div>
           </div>
         </div>
       </header>

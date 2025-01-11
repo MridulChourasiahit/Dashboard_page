@@ -6,6 +6,7 @@ import EditIcon from "../../assets/Editicon.svg";
 import SaveIcon from "../../assets/Filled.svg";
 import FilterIcon from "../../assets/filter.svg";
 import "../../styles/Template.scss";
+import data from "../../Data/TemplateData";
 
 import PropTypes from "prop-types";
 
@@ -21,18 +22,7 @@ export const useTemplates = () => {
     setIsLoading(true);
     // Simulated API call
     setTimeout(() => {
-      const fetchedTemplates = [
-        {
-          id: 1,
-          title: "Template 1",
-          templateId: "T-001",
-          message: "Message content here",
-          createdDate: "2024-12-01 10:30 AM",
-          updateDate: "2024-12-15 04:45 PM",
-          count: 5,
-        },
-        // ... other template data
-      ];
+      const fetchedTemplates = data
       setTemplates(fetchedTemplates);
       setIsLoading(false);
     }, 1000);
@@ -73,8 +63,8 @@ export const useTemplates = () => {
     templates,
     isLoading,
     addTemplate,
-    deleteTemplate,
-    editTemplate,
+    deleteTemplate, 
+    editTemplate, 
   };
 };
 
